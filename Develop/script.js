@@ -1,15 +1,75 @@
-    var time = moment().format("dddd, MMMM Do YYYY")
-    $("#currentDay").text(time);
+// sets the variable for time
 
-    var nine_amBtn = document.getElementById('nine_am btn');
+var time = moment().format("dddd, MMMM Do YYYY")
+ $("#currentDay").text(time);
+
+//  vars for 9am
+ var nine_amBtn = document.getElementById('nine_am btn');
 
 var nine_amInput = document.getElementById('nine_amFormText'); 
+
+// vars for 10 am
+
+var ten_amBtn = document.getElementById('ten_am btn');
+
+var ten_amInput = document.getElementById('ten_amFormText'); 
+
+
+// vars for 11 am
+
+var eleven_amBtn = document.getElementById('eleven_am btn');
+
+var eleven_amInput = document.getElementById('eleven_amFormText'); 
+
+// vars for 12pm
+
+var twelve_pmBtn = document.getElementById('twelve_pm btn');
+
+var twelve_pmInput = document.getElementById('twelve_pmFormText'); 
+
+// vars for 1pm
+
+var one_pmBtn = document.getElementById('one_pm btn');
+
+var one_pmInput = document.getElementById('one_pmFormText'); 
+
+// vars for 2pm
+
+var two_pmBtn = document.getElementById('two_pm btn');
+
+var two_pmInput = document.getElementById('two_pmFormText'); 
+
+// vars for 3pm
+
+var three_pmBtn = document.getElementById('three_pm btn');
+
+var three_pmInput = document.getElementById('three_pmFormText'); 
+
+// vars for 4pm
+
+var four_pmBtn = document.getElementById('four_pm btn');
+
+var four_pmInput = document.getElementById('four_pmFormText'); 
+
+// vars for 5pm
+
+var five_pmBtn = document.getElementById('five_pm btn');
+
+var five_pmInput = document.getElementById('five_pmFormText'); 
+
+
 
 // Check local storage on page load and display existing events
 
 getLocal9();
-
-// issue calendar not keeping events on reload from local storage, goal, load something from local storage on page load
+getLocal10();
+getLocal11();
+getLocal12();
+getLocal1();
+getLocal2();
+getLocal3();
+getLocal4();
+getLocal5();
 
 
 function setLocal9 (event) {
@@ -17,7 +77,7 @@ function setLocal9 (event) {
  
     var nine_amEvent
     
-        nine_amEvent = nine_amInput.value;
+    nine_amEvent = nine_amInput.value;
     console.log(nine_amEvent);
 
     localStorage.setItem("9amevent", JSON.stringify(nine_amEvent))
@@ -34,19 +94,251 @@ nine_amBtn.addEventListener("click",setLocal9);
 
 function getLocal9 () {
    
-    var getnine_amEvent = localStorage.getItem("9amevent");
-  
-   nine_amInput.textContent = getnine_amEvent;
+   $('.nine_am #nine_amFormText').val(JSON.parse(localStorage.getItem('9amevent')));
+
+
+
     return
 }
     
+function setLocal10 (event) {
+    event.preventDefault();
+ 
+    var ten_amEvent
+    
+    ten_amEvent = ten_amInput.value;
+    console.log(ten_amEvent);
+
+    localStorage.setItem("10amevent", JSON.stringify(ten_amEvent))
+
+    var getten_amEvent = localStorage.getItem("10amevent");
+
+    ten_amInput.textContent = getten_amEvent;
+
+      
+}
+
+ten_amBtn.addEventListener("click",setLocal10);
+
+
+function getLocal10 () {
+   
+   $('.ten_am #ten_amFormText').val(JSON.parse(localStorage.getItem('10amevent')));
+
+
+
+    return
+}
+
+function setLocal11 (event) {
+    event.preventDefault();
+ 
+    var eleven_amEvent
+    
+    eleven_amEvent = eleven_amInput.value;
+    console.log(eleven_amEvent);
+
+    localStorage.setItem("11amevent", JSON.stringify(eleven_amEvent))
+
+    var geteleven_amEvent = localStorage.getItem("11amevent");
+
+    eleven_amInput.textContent = geteleven_amEvent;
+
+      
+}
+
+eleven_amBtn.addEventListener("click",setLocal11);
+
+
+function getLocal11 () {
+   
+   $('.eleven_am #eleven_amFormText').val(JSON.parse(localStorage.getItem('11amevent')));
+
+
+
+    return
+}
+
+function setLocal12 (event) {
+    event.preventDefault();
+ 
+    var twelve_pmEvent
+    
+    twelve_pmEvent = twelve_pmInput.value;
+    console.log(twelve_pmEvent);
+
+    localStorage.setItem("12pmevent", JSON.stringify(twelve_pmEvent))
+
+    var gettwelve_pmEvent = localStorage.getItem("12pmevent");
+
+    twelve_pmInput.textContent = gettwelve_pmEvent;
+
+      
+}
+
+twelve_pmBtn.addEventListener("click",setLocal12);
+
+
+function getLocal12 () {
+   
+   $('.twelve_pm #twelve_pmFormText').val(JSON.parse(localStorage.getItem('12pmevent')));
+
+
+
+    return
+}
+
+function setLocal1 (event) {
+    event.preventDefault();
+ 
+    var one_pmEvent
+    
+    one_pmEvent = one_pmInput.value;
+    console.log(one_pmEvent);
+
+    localStorage.setItem("1pmevent", JSON.stringify(one_pmEvent))
+
+    var getone_pmEvent = localStorage.getItem("1pmevent");
+
+    one_pmInput.textContent = getone_pmEvent;
+
+      
+}
+
+one_pmBtn.addEventListener("click",setLocal1);
+
+
+function getLocal1 () {
+   
+   $('.one_pm #one_pmFormText').val(JSON.parse(localStorage.getItem('1pmevent')));
+
+
+
+    return
+}
+
+function setLocal2 (event) {
+    event.preventDefault();
+ 
+    var two_pmEvent
+    
+    two_pmEvent = two_pmInput.value;
+    console.log(two_pmEvent);
+
+    localStorage.setItem("2pmevent", JSON.stringify(two_pmEvent))
+
+    var gettwo_pmEvent = localStorage.getItem("2pmevent");
+
+    two_pmInput.textContent = gettwo_pmEvent;
+
+      
+}
+
+two_pmBtn.addEventListener("click",setLocal2);
+
+
+function getLocal2 () {
+   
+   $('.two_pm #two_pmFormText').val(JSON.parse(localStorage.getItem('2pmevent')));
+
+
+
+    return
+}
+
+function setLocal3 (event) {
+    event.preventDefault();
+ 
+    var three_pmEvent
+    
+    three_pmEvent = three_pmInput.value;
+    console.log(three_pmEvent);
+
+    localStorage.setItem("3pmevent", JSON.stringify(three_pmEvent))
+
+    var getthree_pmEvent = localStorage.getItem("3pmevent");
+
+    three_pmInput.textContent = getthree_pmEvent;
+
+      
+}
+
+three_pmBtn.addEventListener("click",setLocal3);
+
+
+function getLocal3 () {
+   
+   $('.three_pm #three_pmFormText').val(JSON.parse(localStorage.getItem('3pmevent')));
+
+
+
+    return
+}
+
+function setLocal4 (event) {
+    event.preventDefault();
+ 
+    var four_pmEvent
+    
+    four_pmEvent = four_pmInput.value;
+    console.log(four_pmEvent);
+
+    localStorage.setItem("4pmevent", JSON.stringify(four_pmEvent))
+
+    var getfour_pmEvent = localStorage.getItem("4pmevent");
+
+    four_pmInput.textContent = getfour_pmEvent;
+
+      
+}
+
+four_pmBtn.addEventListener("click",setLocal4);
+
+
+function getLocal4 () {
+   
+   $('.four_pm #four_pmFormText').val(JSON.parse(localStorage.getItem('4pmevent')));
+
+
+
+    return
+}
+
+function setLocal5 (event) {
+    event.preventDefault();
+ 
+    var five_pmEvent
+    
+    five_pmEvent = five_pmInput.value;
+    console.log(five_pmEvent);
+
+    localStorage.setItem("5pmevent", JSON.stringify(five_pmEvent))
+
+    var getfive_pmEvent = localStorage.getItem("5pmevent");
+
+    five_pmInput.textContent = getfive_pmEvent;
+
+      
+}
+
+five_pmBtn.addEventListener("click",setLocal5);
+
+
+function getLocal5 () {
+   
+   $('.five_pm #five_pmFormText').val(JSON.parse(localStorage.getItem('5pmevent')));
+
+
+
+    return
+}
 
 // for loop to check if current moment is between 9 and 5 and if yes, find the appropriate box and turn that box the right background color
 
 
 // if current time is past use past class, future, 
 
-// for loop to create button elements
+// ask tutor how to do this whole thing with a for loop
 
 // for (let index = 0; index < array.length; index++) {
 //     const element = array[index];
@@ -54,63 +346,7 @@ function getLocal9 () {
 // }
 
 
-// use moment.js and use javascript to add events to the planer and to local storage
-// try using a for loop to check to see if the current hour is the hour when someone is looking at the calendar, if yes, turn that hour red, if the hour has passed turn the row grey, if the hour hasn't passed turn the row green (change background color)
-// use moment.js and use localstorage
-
-// use the save button on each line of the table to add an event listener to write that event to local storage and then display it
 
 
 // See this for bootstrap table setup from this site: https://getbootstrap.com/docs/4.0/content/tables/
 
-// <table class="table">
-//   <thead>
-//     <tr>
-//       <th scope="col">#</th>
-//       <th scope="col">First</th>
-//       <th scope="col">Last</th>
-//       <th scope="col">Handle</th>
-//     </tr>
-//   </thead>
-//   <tbody>
-//     <tr>
-//       <th scope="row">1</th>
-//       <td>Mark</td>
-//       <td>Otto</td>
-//       <td>@mdo</td>
-//     </tr>
-//     <tr>
-//       <th scope="row">2</th>
-//       <td>Jacob</td>
-//       <td>Thornton</td>
-//       <td>@fat</td>
-//     </tr>
-//     <tr>
-//       <th scope="row">3</th>
-//       <td>Larry</td>
-//       <td>the Bird</td>
-//       <td>@twitter</td>
-//     </tr>
-//   </tbody>
-// </table>
-
-// // <script type="text/javascript">
-// document.getElementById("txt_1").value = getSavedValue("txt_1");    // set the value to this input
-// document.getElementById("txt_2").value = getSavedValue("txt_2");   // set the value to this input
-// /* Here you can add more inputs to set value. if it's saved */
-
-// //Save the value function - save it to localStorage as (ID, VALUE)
-// function saveValue(e){
-//     var id = e.id;  // get the sender's id to save it . 
-//     var val = e.value; // get the value. 
-//     localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
-// }
-
-// //get the saved value function - return the value of "v" from localStorage. 
-// function getSavedValue  (v){
-//     if (!localStorage.getItem(v)) {
-//         return "";// You can change this to your defualt value. 
-//     }
-//     return localStorage.getItem(v);
-// }
-// </script>
