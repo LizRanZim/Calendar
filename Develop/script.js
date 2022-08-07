@@ -1,9 +1,9 @@
-// sets the variable for time
+// sets the variable for the current time
 
 var time = moment().format("dddd, MMMM Do YYYY")
  $("#currentDay").text(time);
 
-//  vars for 9am
+//  vars for 9am 
  var nine_amBtn = document.getElementById('nine_am btn');
 
 var nine_amInput = document.getElementById('nine_amFormText'); 
@@ -57,6 +57,10 @@ var five_pmBtn = document.getElementById('five_pm btn');
 
 var five_pmInput = document.getElementById('five_pmFormText'); 
 
+// selects momentTime class
+
+var momentTime = document.querySelectorAll(".momentTime");
+
 
 
 // Check local storage on page load and display existing events
@@ -71,7 +75,7 @@ getLocal3();
 getLocal4();
 getLocal5();
 
-
+// functions to set and get events from local storage on load for each time block
 function setLocal9 (event) {
     event.preventDefault();
  
@@ -333,20 +337,35 @@ function getLocal5 () {
     return
 }
 
-// for loop to check if current moment is between 9 and 5 and if yes, find the appropriate box and turn that box the right background color
+// end functions to set and get events from local storage
 
 
-// if current time is past use past class, future, 
-
-// ask tutor how to do this whole thing with a for loop
-
-// for (let index = 0; index < array.length; index++) {
-//     const element = array[index];
+// function to change color depending on past present or future
+function colorTime (){
+    var currentTime = parseInt(moment().format('H'));
     
-// }
+    momentTime.forEach(function (nowTime){
+        console.log(nowTime.innerHTML)
+        var timeBlock = parseInt(nowTime.innerHTML);
+        console.log(typeof currentTime,typeof timeBlock)
+    var siblingTime = nowTime.nextElementSibling;
+    console.log(nowTime.nextElementSibling);
+    if (currentTime > timeBlock) {
+    siblingTime.classList.add("past");
+  
+        
+    } else if (currentTime == timeBlock) {
+    siblingTime.classList.add("present");
+        
+    } else {
+        siblingTime.classList.add("future");
+
+    }
+})
+}
+
+colorTime();
 
 
 
-
-// See this for bootstrap table setup from this site: https://getbootstrap.com/docs/4.0/content/tables/
-
+// next session, work with tutor to find a simpler way to do all of this
