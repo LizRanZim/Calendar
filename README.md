@@ -6,7 +6,7 @@ This app is a simple calendar application that allows a user to save events for 
 
 The following .jpeg demonstrates the application functionality:
 
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/Calendar_App.jpg)
+![A user clicks on slots on the color-coded calendar and edits the events.](.\Assets\Calendar_App.jpg)
 
 Here is the link to the deployed application:
 
